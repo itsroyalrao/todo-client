@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const user = localStorage.getItem("user");
@@ -6,14 +6,11 @@ export default function Home() {
     window.location.href = "/login";
   }
 
+  const [showInput, setShowInput] = useState(false);
+
   useEffect(() => {
     document.title = "Home | Todo";
   }, []);
-
-  function userLogout() {
-    localStorage.clear();
-    window.location.href = "/login";
-  }
   return (
     <>
       {user && (
@@ -194,13 +191,39 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full flex justify-center bg-white absolute bottom-0 rounded-b-3xl">
-              <div className="w-[95%] bg-blue-600 flex justify-center relative my-3 text-white p-2 rounded sm:rounded-xl sm:cursor-pointer">
-                Add Todo
-              </div>
+              {showInput ? (
+                <>
+                  <div className="w-full flex justify-around px-2">
+                    <input
+                      className="w-[75%] rounded sm:rounded-lg px-3 my-3 placeholder:italic text-black border-gray-400 border-2 outline-none focus:border-gray-600"
+                      type="text"
+                      autoFocus
+                    />
+                    <div
+                      className="w-[20%] bg-blue-600 flex justify-center relative my-3 text-white p-2 rounded sm:rounded-lg sm:cursor-pointer"
+                      onClick={() => setShowInput(!showInput)}
+                    >
+                      Add
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div
+                  className="w-[95%] bg-blue-600 flex justify-center relative my-3 text-white p-2 rounded sm:rounded-xl sm:cursor-pointer"
+                  onClick={() => setShowInput(!showInput)}
+                >
+                  Add Todo
+                </div>
+              )}
             </div>
           </div>
         </div>
       )}
     </>
   );
+}
+
+function userLogout() {
+  localStorage.clear();
+  window.location.href = "/login";
 }
