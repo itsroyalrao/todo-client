@@ -71,7 +71,10 @@ async function loginDetails(e) {
       );
       if (result.data.success) {
         localStorage.setItem("user", email);
-        window.location.href = `/`;
+        const user = localStorage.getItem("user");
+        if (user) {
+          window.location.href = `/`;
+        } else displayMessage("Something went wrong");
       } else {
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";

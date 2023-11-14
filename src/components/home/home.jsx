@@ -225,5 +225,6 @@ export default function Home() {
 
 function userLogout() {
   localStorage.clear();
-  window.location.href = "/login";
+  const user = localStorage.getItem("user");
+  if (!user) window.location.href = "/login";
 }
