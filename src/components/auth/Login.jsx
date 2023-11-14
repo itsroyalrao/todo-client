@@ -66,13 +66,12 @@ async function loginDetails(e) {
     else {
       const result = await axios.post(
         // "http://localhost:3000/auth/login",
-        "https://cjhyqeqp8c.execute-api.ap-south-1.amazonaws.com/auth/login",
+        "https://todo-r8lx.onrender.com/auth/login",
         {
           email,
           password,
         }
       );
-      console.log(result);
       if (result.data.success) {
         window.location.href = `/home?email=${email}`;
       } else {
