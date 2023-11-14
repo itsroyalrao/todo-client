@@ -4,7 +4,7 @@ import axios from "axios";
 
 function Signup() {
   useEffect(() => {
-    document.title = "Signup | Onemate";
+    document.title = "Signup | Todo";
   }, []);
 
   return (
@@ -86,7 +86,6 @@ async function signupDetails(e) {
     else if (password === confirmPassword) {
       const result = await axios.post(
         "https://todo-r8lx.onrender.com/auth/signup",
-        // "http://localhost:3000/auth/signup",
         userDetails
       );
       if (result.data.success) window.location.href = "/";

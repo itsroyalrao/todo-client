@@ -5,3 +5,11 @@
 body {
   user-select: none;
 }
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}

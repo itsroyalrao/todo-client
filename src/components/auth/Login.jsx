@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 function Login() {
   useEffect(() => {
-    document.title = "Login | Onemate";
+    document.title = "Login | Todo";
   }, []);
   return (
     <>
-      <div className="bg-gradient-to-br from-blue-600 to-blue-400 min-h-screen flex flex-col items-center justify-center">
+      <div className="bg-white sm:bg-gradient-to-br sm:from-blue-600 sm:to-blue-400 min-h-screen flex flex-col items-center justify-center">
         <div
           id="login-block"
           className="w-[270px] h-48 bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white"
@@ -65,7 +65,6 @@ async function loginDetails(e) {
     else if (!password) displayMessage("Password is required");
     else {
       const result = await axios.post(
-        // "http://localhost:3000/auth/login",
         "https://todo-r8lx.onrender.com/auth/login",
         {
           email,

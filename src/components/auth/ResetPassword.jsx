@@ -1,6 +1,10 @@
 import axios from "axios";
+import { useEffect } from "react";
 
 function ResetPassword() {
+  useEffect(() => {
+    document.title = "Reset Password | Todo";
+  }, []);
   return (
     <>
       <div className="bg-gradient-to-br from-blue-600 to-blue-400 w-full min-h-screen flex flex-col items-center justify-center">

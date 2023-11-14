@@ -1,7 +1,12 @@
 import axios from "axios";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function ChangePassword() {
+  useEffect(() => {
+    document.title = "Change Password | Todo";
+  }, []);
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const email = queryParams.get("email");
@@ -24,7 +29,7 @@ function ChangePassword() {
         if (response.data.success) {
           displayMessage(response.data.msg, true);
           setTimeout(() => {
-            window.location.href = "/";
+            window.location.href = "/login";
           }, 2000);
         }
       } else displayMessage("Password do not match!", false);
