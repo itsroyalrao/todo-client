@@ -1,66 +1,74 @@
+import { useEffect } from "react";
+
 export default function Home() {
-  const user = localStorage.getItem("user");
-  if (!user) {
-    window.location.href = "/login";
-  }
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      window.location.href = "/login";
+    }
+    document.title = "Home | Onemate";
+  }, []);
   return (
     <>
       <div className="bg-gradient-to-br from-blue-600 to-blue-400 min-h-screen flex flex-col items-center justify-center">
-        <div className="w-[80vw] h-[80vh] sm:w-[400px] sm:h-[450px] bg-white rounded-3xl flex flex-col items-center">
-          <div className="font-bold text-3xl text-gray-800 p-2">Todo</div>
-          <div className="w-full p-4 flex text-lg">
-            <input type="checkbox" className="cursor-pointer" />
+        <div className="w-[80vw] h-[80vh] sm:w-[400px] sm:h-[450px] bg-white rounded-lg sm:rounded-3xl flex flex-col items-center px-4 relative">
+          <div className="font-bold text-3xl text-gray-800 py-2">Todo</div>
+          <div className="w-full py-4 flex text-lg">
+            <input type="checkbox" className="sm:cursor-pointer" />
             <div className="w-full flex justify-between">
               <div className="px-3 capitalize">one</div>
               <div className="flex space-x-2">
                 <img
-                  className="cursor-pointer w-5 h-5"
+                  className="sm:cursor-pointer w-5 h-5"
                   src="icons/edit.png"
-                  alt="delete"
+                  alt="edit"
                 />
                 <img
-                  className="cursor-pointer w-5 h-5"
+                  className="sm:cursor-pointer w-5 h-5"
                   src="icons/delete.png"
                   alt="delete"
                 />
               </div>
             </div>
           </div>
-          <div className="w-full p-4 flex text-lg">
-            <input type="checkbox" className="cursor-pointer" />
+          <div className="w-full py-4 flex text-lg">
+            <input type="checkbox" className="sm:cursor-pointer" />
             <div className="w-full flex justify-between">
               <div className="px-3 capitalize">one</div>
               <div className="flex space-x-2">
                 <img
-                  className="cursor-pointer w-5 h-5"
+                  className="sm:cursor-pointer w-5 h-5"
                   src="icons/edit.png"
-                  alt="delete"
+                  alt="edit"
                 />
                 <img
-                  className="cursor-pointer w-5 h-5"
+                  className="sm:cursor-pointer w-5 h-5"
                   src="icons/delete.png"
                   alt="delete"
                 />
               </div>
             </div>
           </div>
-          <div className="w-full p-4 flex text-lg">
-            <input type="checkbox" className="cursor-pointer" />
+          <div className="w-full py-4 flex text-lg">
+            <input type="checkbox" className="sm:cursor-pointer" />
             <div className="w-full flex justify-between">
               <div className="px-3 capitalize">one</div>
               <div className="flex space-x-2">
                 <img
-                  className="cursor-pointer w-5 h-5"
+                  className="sm:cursor-pointer w-5 h-5"
                   src="icons/edit.png"
-                  alt="delete"
+                  alt="edit"
                 />
                 <img
-                  className="cursor-pointer w-5 h-5"
+                  className="sm:cursor-pointer w-5 h-5"
                   src="icons/delete.png"
                   alt="delete"
                 />
               </div>
             </div>
+          </div>
+          <div className="w-[95%] bg-blue-600 flex justify-center absolute bottom-3 text-white p-2 rounded sm:rounded-xl">
+            Add Todo
           </div>
         </div>
       </div>

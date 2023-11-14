@@ -62,7 +62,7 @@ function ChangePassword() {
           </div>
         </div>
         <div
-          className="bg-blue-900 w-44 rounded-b-xl flex items-center justify-center text-white p-2 cursor-pointer sm:hover:bg-white sm:hover:text-blue-900 sm:hover:font-bold shadow-md shadow-white hover:shadow-none"
+          className="bg-blue-900 w-44 rounded-b-xl flex items-center justify-center text-white p-2 sm:cursor-pointer sm:hover:bg-white sm:hover:text-blue-900 sm:hover:font-bold shadow-md shadow-white hover:shadow-none"
           onClick={(e) => changePass(e)}
         >
           Change Password
