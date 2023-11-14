@@ -2,14 +2,16 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (!user) {
+    const sessionUser = sessionStorage.getItem("user");
+    const localStorageUser = localStorage.getItem("user");
+    if (!sessionUser && !localStorageUser) {
       window.location.href = "/login";
     }
     document.title = "Home | Todo";
   }, []);
 
   function userLogout() {
+    sessionStorage.clear();
     localStorage.clear();
     window.location.href = "/login";
   }

@@ -8,17 +8,17 @@ function Login() {
   }, []);
   return (
     <>
-      <div className="bg-white sm:bg-gradient-to-br sm:from-blue-600 sm:to-blue-400 min-h-screen flex flex-col items-center justify-center">
+      <div className="sm:bg-gradient-to-br from-blue-600 to-blue-400 h-screen flex flex-col items-center justify-center">
         <div
           id="login-block"
-          className="w-[270px] h-48 bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white"
+          className="w-fit h-fit bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white"
         >
           <img
             className="w-20 h-20 -my-10 rounded-full"
             src="https://img.freepik.com/premium-vector/man-character_665280-46970.jpg?w=740"
             alt="This is an image"
           />
-          <div className="flex flex-col items-center py-16 space-y-2">
+          <div className="flex flex-col items-center pt-16 p-4 space-y-2">
             <input
               type="email"
               id="email"
@@ -33,7 +33,18 @@ function Login() {
               placeholder="Password"
             />
             <div id="error-message" hidden></div>
-            <div className="flex text-sm w-full justify-between py-2 px-2 text-white">
+            <div className="w-full flex space-x-2 px-1">
+              <input
+                type="checkbox"
+                className="sm:cursor-pointer"
+                onClick={() => {
+                  const email = document.getElementById("email").value;
+                  localStorage.setItem("user", email);
+                }}
+              />
+              <div>Remember me</div>
+            </div>
+            <div className="flex text-sm w-full justify-between pb-2 px-2 text-white">
               <Link className="sm:hover:scale-110" to={"/resetPassword"}>
                 Forgot password?
               </Link>
@@ -72,7 +83,7 @@ async function loginDetails(e) {
         }
       );
       if (result.data.success) {
-        localStorage.setItem("user", email);
+        sessionStorage.setItem("user", email);
         window.location.href = `/`;
       } else {
         document.getElementById("email").value = "";
