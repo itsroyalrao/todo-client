@@ -10,9 +10,9 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
           <Route path="/changePassword" element={<ChangePassword />} />
         </Routes>

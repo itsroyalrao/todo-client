@@ -1,4 +1,8 @@
 export default function Home() {
+  const user = localStorage.getItem("user");
+  if (!user) {
+    window.location.href = "/login";
+  }
   return (
     <>
       <div className="bg-gradient-to-br from-blue-600 to-blue-400 min-h-screen flex flex-col items-center justify-center">

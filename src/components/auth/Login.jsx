@@ -73,7 +73,8 @@ async function loginDetails(e) {
         }
       );
       if (result.data.success) {
-        window.location.href = `/home?email=${email}`;
+        localStorage.setItem("user", email);
+        window.location.href = `/`;
       } else {
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
