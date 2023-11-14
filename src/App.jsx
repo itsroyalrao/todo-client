@@ -9,15 +9,13 @@ function App() {
   return (
     <>
       <Router>
-        <div className="bg-[#242424] h-screen text-white">
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/resetPassword" element={<ResetPassword />} />
-            <Route path="/changePassword" element={<ChangePassword />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/resetPassword" element={<ResetPassword />} />
+          <Route path="/changePassword" element={<ChangePassword />} />
+        </Routes>
       </Router>
     </>
   );
