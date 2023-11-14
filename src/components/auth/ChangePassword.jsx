@@ -15,7 +15,7 @@ function ChangePassword() {
 
       if (newPassword === confirmNewPassword) {
         const response = await axios.post(
-          "http://localhost:3000/auth/changePassword",
+          "https://todo-r8lx.onrender.com/auth/changePassword",
           {
             email,
             newPassword,

@@ -41,7 +41,7 @@ const resetPass = async () => {
     const email = document.getElementById("email").value;
 
     const response = await axios.post(
-      "http://localhost:3000/auth/resetPassword",
+      "https://todo-r8lx.onrender.com/auth/resetPassword",
       { email }
     );
 
