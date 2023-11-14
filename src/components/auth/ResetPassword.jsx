@@ -8,25 +8,24 @@ function ResetPassword() {
   return (
     <>
       <div className="bg-gradient-to-br from-blue-600 to-blue-400 w-full min-h-screen flex flex-col items-center justify-center">
-        <div
-          id="reset-password-block"
-          className="w-[270px] h-[9.5rem] bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white"
-        >
+        <div className="bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white">
           <img
             className="w-20 h-20 -my-10 rounded-full"
             src="https://img.freepik.com/premium-vector/man-character_665280-46970.jpg?w=740"
             alt="This is an image"
           />
-          <div className="text-white text-2xl mt-12">Reset your password</div>
-          <div className="flex flex-col items-center py-4 space-y-2">
-            <input
-              type="email"
-              id="email"
-              className="rounded-lg px-3 py-1 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
-              placeholder="Email ID"
-              autoComplete="email"
-            />
-            <div id="error-message" hidden></div>
+          <div className="px-4 mt-12 pb-3">
+            <div className="text-white text-2xl">Reset your password</div>
+            <div className="flex flex-col items-center py-4 space-y-2">
+              <input
+                type="email"
+                id="email"
+                className="w-full rounded-lg px-3 py-2 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
+                placeholder="Email ID"
+                autoComplete="email"
+              />
+              <div id="error-message" hidden></div>
+            </div>
           </div>
         </div>
         <div
@@ -65,10 +64,6 @@ function DisplayMessage(message, bool) {
   if (bool) msg.className = "text-green-600";
   else msg.className = "text-red-400";
   msg.appendChild(document.createTextNode(message));
-
-  const block = document.getElementById("reset-password-block");
-  block.className =
-    "w-72 h-[10rem] bg-blue-900 flex flex-col items-center rounded-3xl shadow-lg shadow-blue-800";
 }
 
 export default ResetPassword;

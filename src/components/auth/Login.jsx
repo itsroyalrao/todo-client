@@ -8,32 +8,29 @@ function Login() {
   }, []);
   return (
     <>
-      <div className="sm:bg-gradient-to-br from-blue-600 to-blue-400 h-screen flex flex-col items-center justify-center">
-        <div
-          id="login-block"
-          className="w-fit h-fit bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white"
-        >
+      <div className="bg-gradient-to-br from-blue-600 to-blue-400 min-h-screen flex flex-col items-center justify-center">
+        <div className="bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white">
           <img
             className="w-20 h-20 -my-10 rounded-full"
             src="https://img.freepik.com/premium-vector/man-character_665280-46970.jpg?w=740"
             alt="This is an image"
           />
-          <div className="flex flex-col items-center pt-16 p-4 space-y-2">
+          <div className="flex flex-col items-center px-4 mt-16 pb-3 space-y-2">
             <input
               type="email"
               id="email"
-              className="rounded-lg px-3 py-1 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
+              className="rounded-lg px-3 py-2 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
               placeholder="Email ID"
               autoComplete="email"
             />
             <input
               type="password"
               id="password"
-              className="rounded-lg px-3 py-1 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
+              className="rounded-lg px-3 py-2 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
               placeholder="Password"
             />
             <div id="error-message" hidden></div>
-            <div className="w-full flex space-x-2 px-1">
+            <div className="w-full flex space-x-2 px-1 text-white">
               <input
                 type="checkbox"
                 className="sm:cursor-pointer"
@@ -102,10 +99,6 @@ function displayMessage(message) {
   msg.style.display = "block";
   msg.className = "text-red-400";
   msg.appendChild(document.createTextNode(message));
-
-  const loginBlock = document.getElementById("login-block");
-  loginBlock.className =
-    "w-64 h-[13.5rem] bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white";
 }
 
 export default Login;

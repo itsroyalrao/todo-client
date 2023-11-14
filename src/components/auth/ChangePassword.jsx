@@ -42,28 +42,30 @@ function ChangePassword() {
       <div className="bg-gradient-to-br from-blue-600 to-blue-400 w-full min-h-screen flex flex-col items-center justify-center">
         <div
           id="change-password-block"
-          className="w-[270px] h-48 bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white"
+          className="bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white"
         >
           <img
             className="w-20 h-20 -my-10 rounded-full"
             src="https://img.freepik.com/premium-vector/man-character_665280-46970.jpg?w=740"
             alt="This is an image"
           />
-          <div className="text-white text-2xl mt-12">Change your password</div>
-          <div className="flex flex-col items-center py-4 space-y-2">
-            <input
-              type="password"
-              id="new-password"
-              className="rounded-lg px-3 py-1 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
-              placeholder="New password"
-            />
-            <input
-              type="password"
-              id="confirm-new-password"
-              className="rounded-lg px-3 py-1 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
-              placeholder="Confirm new password"
-            />
-            <div id="error-message" hidden></div>
+          <div className="px-4 mt-12 pb-3">
+            <div className="text-white text-2xl">Change your password</div>
+            <div className="flex flex-col items-center py-4 space-y-2">
+              <input
+                type="password"
+                id="new-password"
+                className="rounded-lg px-3 py-2 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
+                placeholder="New password"
+              />
+              <input
+                type="password"
+                id="confirm-new-password"
+                className="rounded-lg px-3 py-2 placeholder:italic focus:outline-none focus:outline-blue-600 text-black"
+                placeholder="Confirm new password"
+              />
+              <div id="error-message" hidden></div>
+            </div>
           </div>
         </div>
         <div
