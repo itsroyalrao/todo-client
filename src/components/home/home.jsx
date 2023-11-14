@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 
 export default function Home() {
-  const sessionUser = sessionStorage.getItem("user");
-  const localStorageUser = localStorage.getItem("user");
-  if (!sessionUser && !localStorageUser) {
+  const user = localStorage.getItem("user");
+  if (!user) {
     window.location.href = "/login";
   }
 
@@ -12,13 +11,12 @@ export default function Home() {
   }, []);
 
   function userLogout() {
-    sessionStorage.clear();
     localStorage.clear();
     window.location.href = "/login";
   }
   return (
     <>
-      {(localStorageUser || sessionUser) && (
+      {user && (
         <div className="bg-gradient-to-br from-blue-600 to-blue-400 min-h-screen flex flex-col items-center justify-center">
           <div className="w-[100%] h-[100vh] sm:w-[400px] sm:h-[450px] bg-white sm:rounded-3xl flex flex-col items-center px-4 py-2 relative">
             <div className="w-full flex items-center justify-between px-1">

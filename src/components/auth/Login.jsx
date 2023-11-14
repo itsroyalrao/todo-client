@@ -30,17 +30,7 @@ function Login() {
               placeholder="Password"
             />
             <div id="error-message" hidden></div>
-            <div className="w-full flex space-x-2 px-1 text-white">
-              <input
-                type="checkbox"
-                className="sm:cursor-pointer"
-                onClick={() => {
-                  const email = document.getElementById("email").value;
-                  localStorage.setItem("user", email);
-                }}
-              />
-              <div>Remember me</div>
-            </div>
+
             <div className="flex text-sm w-full justify-between pb-2 px-2 text-white">
               <Link className="sm:hover:scale-110" to={"/resetPassword"}>
                 Forgot password?
@@ -80,7 +70,7 @@ async function loginDetails(e) {
         }
       );
       if (result.data.success) {
-        sessionStorage.setItem("user", email);
+        localStorage.setItem("user", email);
         window.location.href = `/`;
       } else {
         document.getElementById("email").value = "";
