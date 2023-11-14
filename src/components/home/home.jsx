@@ -31,7 +31,7 @@ export default function Home() {
                 <input type="checkbox" className="sm:cursor-pointer" />
                 <div className="w-full flex justify-between">
                   <div className="px-3 capitalize">one</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4 sm:space-x-2">
                     <img
                       className="sm:cursor-pointer w-5 h-5"
                       src="icons/edit.png"
@@ -49,7 +49,7 @@ export default function Home() {
                 <input type="checkbox" className="sm:cursor-pointer" />
                 <div className="w-full flex justify-between">
                   <div className="px-3 capitalize">one</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4 sm:space-x-2">
                     <img
                       className="sm:cursor-pointer w-5 h-5"
                       src="icons/edit.png"
@@ -67,7 +67,7 @@ export default function Home() {
                 <input type="checkbox" className="sm:cursor-pointer" />
                 <div className="w-full flex justify-between">
                   <div className="px-3 capitalize">one</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4 sm:space-x-2">
                     <img
                       className="sm:cursor-pointer w-5 h-5"
                       src="icons/edit.png"
@@ -85,7 +85,7 @@ export default function Home() {
                 <input type="checkbox" className="sm:cursor-pointer" />
                 <div className="w-full flex justify-between">
                   <div className="px-3 capitalize">one</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4 sm:space-x-2">
                     <img
                       className="sm:cursor-pointer w-5 h-5"
                       src="icons/edit.png"
@@ -103,7 +103,7 @@ export default function Home() {
                 <input type="checkbox" className="sm:cursor-pointer" />
                 <div className="w-full flex justify-between">
                   <div className="px-3 capitalize">one</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4 sm:space-x-2">
                     <img
                       className="sm:cursor-pointer w-5 h-5"
                       src="icons/edit.png"
@@ -121,7 +121,7 @@ export default function Home() {
                 <input type="checkbox" className="sm:cursor-pointer" />
                 <div className="w-full flex justify-between">
                   <div className="px-3 capitalize">one</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4 sm:space-x-2">
                     <img
                       className="sm:cursor-pointer w-5 h-5"
                       src="icons/edit.png"
@@ -139,7 +139,7 @@ export default function Home() {
                 <input type="checkbox" className="sm:cursor-pointer" />
                 <div className="w-full flex justify-between">
                   <div className="px-3 capitalize">one</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4 sm:space-x-2">
                     <img
                       className="sm:cursor-pointer w-5 h-5"
                       src="icons/edit.png"
@@ -157,7 +157,7 @@ export default function Home() {
                 <input type="checkbox" className="sm:cursor-pointer" />
                 <div className="w-full flex justify-between">
                   <div className="px-3 capitalize">one</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4 sm:space-x-2">
                     <img
                       className="sm:cursor-pointer w-5 h-5"
                       src="icons/edit.png"
@@ -175,7 +175,7 @@ export default function Home() {
                 <input type="checkbox" className="sm:cursor-pointer" />
                 <div className="w-full flex justify-between">
                   <div className="px-3 capitalize">one</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-4 sm:space-x-2">
                     <img
                       className="sm:cursor-pointer w-5 h-5"
                       src="icons/edit.png"
