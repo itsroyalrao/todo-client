@@ -110,10 +110,6 @@ function displayMessage(message) {
   msg.style.display = "block";
   msg.className = "text-red-400";
   msg.appendChild(document.createTextNode(message));
-
-  const signupBlock = document.getElementById("signup-block");
-  signupBlock.className =
-    "w-64 h-[18.5rem] bg-blue-900 flex flex-col items-center rounded-3xl shadow-lg shadow-white";
 }
 
 export default Signup;

@@ -1,20 +1,23 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const user = localStorage.getItem("user");
-  const userSession = sessionStorage.getItem("user");
-  if (!userSession && !user) {
-    window.location.href = "/login";
-  }
-
   const [showInput, setShowInput] = useState(false);
+  const [loadingStatus, setLoadingStatus] = useState(false);
 
   useEffect(() => {
-    document.title = "Home | Todo";
+    (async () => {
+      const response = await axios.post("http://localhost:3000/auth/status", {
+        email: localStorage.getItem("user"),
+      });
+      if (response.data.logStatus) setLoadingStatus(response.data.logStatus);
+      else window.location.href = "/login";
+      document.title = "Home | Todo";
+    })();
   }, []);
   return (
     <>
-      {(user || userSession) && (
+      {loadingStatus && (
         <div className="bg-gradient-to-br from-blue-600 to-blue-400 min-h-screen flex flex-col items-center justify-center">
           <div className="w-[100%] h-[100vh] sm:w-[400px] sm:h-[450px] bg-white sm:rounded-3xl flex flex-col items-center px-4 py-2 relative">
             <div className="w-full flex items-center justify-between px-1">
@@ -224,8 +227,17 @@ export default function Home() {
   );
 }
 
-function userLogout() {
-  localStorage.clear();
-  sessionStorage.clear();
-  window.location.href = "/login";
+async function userLogout() {
+  try {
+    await axios.post(
+      "http://localhost:3000/auth/logout",
+      // "https://todo-r8lx.onrender.com/auth/logout",
+      {
+        email: localStorage.getItem("user"),
+      }
+    );
+    window.location.href = "/login";
+  } catch (e) {
+    console.log(e);
+  }
 }
