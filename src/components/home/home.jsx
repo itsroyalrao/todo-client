@@ -7,9 +7,13 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.post("http://localhost:3000/auth/status", {
-        email: localStorage.getItem("user"),
-      });
+      const response = await axios.post(
+        // "http://localhost:3000/auth/status",
+        "https://todo-r8lx.onrender.com/auth/status",
+        {
+          email: localStorage.getItem("user"),
+        }
+      );
       if (response.data.logStatus) setLoadingStatus(response.data.logStatus);
       else window.location.href = "/login";
       document.title = "Home | Todo";
@@ -230,8 +234,8 @@ export default function Home() {
 async function userLogout() {
   try {
     await axios.post(
-      "http://localhost:3000/auth/logout",
-      // "https://todo-r8lx.onrender.com/auth/logout",
+      // "http://localhost:3000/auth/logout",
+      "https://todo-r8lx.onrender.com/auth/logout",
       {
         email: localStorage.getItem("user"),
       }

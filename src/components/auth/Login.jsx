@@ -63,8 +63,8 @@ async function loginDetails(e) {
     else if (!password) displayMessage("Password is required");
     else {
       const result = await axios.post(
-        "http://localhost:3000/auth/login",
-        // "https://todo-r8lx.onrender.com/auth/login",
+        // "http://localhost:3000/auth/login",
+        "https://todo-r8lx.onrender.com/auth/login",
         {
           email,
           password,
