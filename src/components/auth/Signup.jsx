@@ -85,7 +85,8 @@ async function signupDetails(e) {
     else if (!password) displayMessage("Password is required");
     else if (password === confirmPassword) {
       const result = await axios.post(
-        "https://todo-r8lx.onrender.com/auth/signup",
+        // "https://todo-r8lx.onrender.com/auth/signup",
+        "https://todos-app.up.railway.app/auth/signup",
         userDetails
       );
       if (result.data.success) window.location.href = "/";

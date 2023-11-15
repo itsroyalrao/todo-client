@@ -9,7 +9,8 @@ export default function Home() {
     (async () => {
       const response = await axios.post(
         // "http://localhost:3000/auth/status",
-        "https://todo-r8lx.onrender.com/auth/status",
+        // "https://todo-r8lx.onrender.com/auth/status",
+        "https://todos-app.up.railway.app/auth/status",
         {
           email: localStorage.getItem("user"),
         }
@@ -235,7 +236,8 @@ async function userLogout() {
   try {
     await axios.post(
       // "http://localhost:3000/auth/logout",
-      "https://todo-r8lx.onrender.com/auth/logout",
+      // "https://todo-r8lx.onrender.com/auth/logout",
+      "https://todos-app.up.railway.app/auth/logout",
       {
         email: localStorage.getItem("user"),
       }

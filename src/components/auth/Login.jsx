@@ -64,7 +64,8 @@ async function loginDetails(e) {
     else {
       const result = await axios.post(
         // "http://localhost:3000/auth/login",
-        "https://todo-r8lx.onrender.com/auth/login",
+        // "https://todo-r8lx.onrender.com/auth/login",
+        "https://todos-app.up.railway.app/auth/login",
         {
           email,
           password,
