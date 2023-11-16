@@ -8,7 +8,7 @@ function Login() {
   }, []);
   return (
     <>
-      <div className="bg-gradient-to-br from-blue-600 to-blue-400 min-h-screen flex flex-col items-center justify-center">
+      <div className="bg-gradient-to-br from-blue-600 to-blue-400 h-[100dvh] flex flex-col items-center justify-center">
         <div className="bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white">
           <img
             className="w-20 h-20 -my-10 rounded-full"

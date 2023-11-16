@@ -40,11 +40,8 @@ function ChangePassword() {
   };
   return (
     <>
-      <div className="bg-gradient-to-br from-blue-600 to-blue-400 w-full min-h-screen flex flex-col items-center justify-center">
-        <div
-          id="change-password-block"
-          className="bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white"
-        >
+      <div className="bg-gradient-to-br from-blue-600 to-blue-400 w-full h-[100dvh] flex flex-col items-center justify-center">
+        <div className="bg-blue-900 flex flex-col items-center rounded-3xl shadow-md shadow-white">
           <img
             className="w-20 h-20 -my-10 rounded-full"
             src="https://img.freepik.com/premium-vector/man-character_665280-46970.jpg?w=740"
@@ -87,10 +84,6 @@ function displayMessage(message, bool) {
   if (bool) msg.className = "text-green-600";
   else msg.className = "text-red-400";
   msg.appendChild(document.createTextNode(message));
-
-  const block = document.getElementById("change-password-block");
-  block.className =
-    "w-72 h-[12.5rem] bg-blue-900 flex flex-col items-center rounded-3xl shadow-lg shadow-blue-800";
 }
 
 export default ChangePassword;
