@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       {loadingStatus && (
-        <div className="bg-gradient-to-br from-blue-600 to-blue-400 min-h-screen flex flex-col items-center justify-center">
+        <div className="bg-gradient-to-br from-blue-600 to-blue-400 h-[100dvh] flex flex-col items-center justify-center">
           <div className="w-[100%] h-[100dvh] sm:w-[450px] sm:h-[500px] bg-white sm:rounded-3xl flex flex-col items-center px-4 py-2 relative">
             <div className="w-full flex items-center justify-between px-1">
               <div className="font-bold text-3xl text-gray-800 py-2">Todo</div>
