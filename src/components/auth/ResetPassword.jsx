@@ -44,7 +44,8 @@ const resetPass = async () => {
     const email = document.getElementById("email").value;
 
     const response = await axios.post(
-      "https://todos-app.up.railway.app/auth/resetPassword",
+      "http://localhost:3000/auth/resetPassword",
+      // "https://todos-app.up.railway.app/auth/resetPassword",
       { email }
     );
 
