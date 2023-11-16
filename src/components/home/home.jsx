@@ -1,8 +1,11 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 import userLogout from "../../functions/home/userLogout";
 import launchHome from "../../functions/home/launchHome";
+import addTodo from "../../functions/home/addTodo";
+import getTodos from "../../functions/home/getTodos";
+import deleteTodo from "../../functions/home/deleteTodo";
+import isChecked from "../../functions/home/isChecked";
 
 export default function Home() {
   const [showInput, setShowInput] = useState(false);
@@ -40,7 +43,9 @@ export default function Home() {
                           className="sm:cursor-pointer"
                           checked={todo.isComplete}
                           disabled={todo.isComplete}
-                          onChange={() => isChecked(todo._id, setTodos)}
+                          onChange={() =>
+                            isChecked(todo._id, setTodos, getTodos)
+                          }
                         />
                         <div className="w-full flex justify-between">
                           <div className=" px-3 capitalize overflow-hidden break-words">
@@ -56,7 +61,9 @@ export default function Home() {
                               className="sm:cursor-pointer w-5 h-5"
                               src="icons/delete.png"
                               alt="delete"
-                              onClick={() => deleteTodo(todo._id, setTodos)}
+                              onClick={() =>
+                                deleteTodo(todo._id, setTodos, getTodos)
+                              }
                             />
                           </div>
                         </div>
@@ -84,7 +91,8 @@ export default function Home() {
                           setInputValue,
                           setShowInput,
                           showInput,
-                          setTodos
+                          setTodos,
+                          getTodos
                         );
                       }
                     }}
@@ -97,7 +105,8 @@ export default function Home() {
                         setInputValue,
                         setShowInput,
                         showInput,
-                        setTodos
+                        setTodos,
+                        getTodos
                       )
                     }
                   >
@@ -118,61 +127,4 @@ export default function Home() {
       )}
     </>
   );
-}
-
-async function addTodo(
-  inputValue,
-  setInputValue,
-  setShowInput,
-  showInput,
-  setTodos
-) {
-  if (inputValue) {
-    try {
-      await axios.post(
-        // "http://localhost:3000/todo",
-        "https://todos-app.up.railway.app/todo",
-        {
-          inputValue,
-        }
-      );
-
-      setInputValue("");
-      getTodos(setTodos);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  setShowInput(!showInput);
-}
-
-async function getTodos(setTodos) {
-  try {
-    // const response = await axios.get("http://localhost:3000/todo");
-    const response = await axios.get("https://todos-app.up.railway.app/todo");
-    setTodos(response.data.data);
-  } catch (e) {
-    console.log(e.message);
-  }
-}
-
-async function deleteTodo(id, setTodos) {
-  try {
-    // await axios.delete(`http://localhost:3000/todo?id=${id}`);
-    await axios.delete(`https://todos-app.up.railway.app/todo?id=${id}`);
-
-    await getTodos(setTodos);
-  } catch (e) {
-    console.log(e.message);
-  }
-}
-
-async function isChecked(id, setTodos) {
-  try {
-    // await axios.get(`http://localhost:3000/todo/${id}`);
-    await axios.get(`https://todos-app.up.railway.app/todo/${id}`);
-    getTodos(setTodos);
-  } catch (e) {
-    console.log(e.message);
-  }
 }

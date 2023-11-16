@@ -2,8 +2,8 @@ import axios from "axios";
 
 const launchHome = async (setLoadingStatus) => {
   const response = await axios.post(
-    // "https://todos-app.up.railway.app/auth/status",
-    "http://localhost:3000/auth/status",
+    "https://todos-app.up.railway.app/auth/status",
+    // "http://localhost:3000/auth/status",
     {
       email: localStorage.getItem("user"),
     }
