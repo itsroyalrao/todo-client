@@ -20,7 +20,7 @@ function ChangePassword() {
 
       if (newPassword === confirmNewPassword) {
         const response = await axios.post(
-          "https://todo-r8lx.onrender.com/auth/changePassword",
+          "https://todos-app.up.railway.app/auth/changePassword",
           {
             email,
             newPassword,
