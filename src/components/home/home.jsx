@@ -33,7 +33,7 @@ export default function Home() {
               />
             </div>
             <div className="w-full overflow-auto">
-              {todos &&
+              {todos ? (
                 todos.map((todo) => {
                   return (
                     <div key={todo._id}>
@@ -52,11 +52,13 @@ export default function Home() {
                             {todo.content}
                           </div>
                           <div className="flex space-x-4 sm:space-x-2">
-                            <img
-                              className="sm:cursor-pointer w-5 h-5"
-                              src="icons/edit.png"
-                              alt="edit"
-                            />
+                            {!todo.isComplete && (
+                              <img
+                                className="sm:cursor-pointer w-5 h-5"
+                                src="icons/edit.png"
+                                alt="edit"
+                              />
+                            )}
                             <img
                               className="sm:cursor-pointer w-5 h-5"
                               src="icons/delete.png"
@@ -70,7 +72,12 @@ export default function Home() {
                       </div>
                     </div>
                   );
-                })}
+                })
+              ) : (
+                <div className="w-full h-[360px] flex justify-center items-center font-bold text-xl text-gray-600">
+                  Nothing to do
+                </div>
+              )}
             </div>
             <div className="w-full flex justify-center bg-white absolute bottom-0 rounded-b-3xl">
               {showInput ? (
