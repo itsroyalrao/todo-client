@@ -52,7 +52,7 @@ export default function Home() {
                             {todo.content}
                             {todo.isComplete && (
                               <img
-                                className="sm:cursor-pointer w-5 h-5"
+                                className="w-5 h-5"
                                 src="icons/checked.png"
                                 alt="edit"
                               />
