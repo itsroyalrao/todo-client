@@ -1,4 +1,5 @@
 import axios from "axios";
+import { url } from "./backendUrl";
 
 export default async function addTodo(
   inputValue,
@@ -12,14 +13,10 @@ export default async function addTodo(
     try {
       const email = localStorage.getItem("user");
 
-      await axios.post(
-        // "http://localhost:3000/todo",
-        "https://todos-app.up.railway.app/todo",
-        {
-          email,
-          inputValue,
-        }
-      );
+      await axios.post(`${url()}/todo`, {
+        email,
+        inputValue,
+      });
 
       setInputValue("");
       getTodos(setTodos);
