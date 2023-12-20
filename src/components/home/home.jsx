@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 
-import userLogout from "../../functions/home/userLogout";
-import launchHome from "../../functions/home/launchHome";
-import addTodo from "../../functions/home/addTodo";
-import getTodos from "../../functions/home/getTodos";
-import deleteTodo from "../../functions/home/deleteTodo";
-import isChecked from "../../functions/home/isChecked";
+import launchHome from "../../functions/launchHome";
+import { addTodo, deleteTodo, getTodos, isChecked } from "../../functions/todo";
+import { userLogout } from "../../functions/user";
 
 export default function Home() {
   const [showInput, setShowInput] = useState(false);
@@ -77,7 +74,7 @@ export default function Home() {
                 </div>
               )}
             </div>
-            {/* <div className="w-full flex justify-center bg-white bottom-0 rounded-b-3xl"> */}
+
             {showInput ? (
               <div className="w-full flex justify-around px-2">
                 <input
@@ -126,7 +123,6 @@ export default function Home() {
                 Add Todo
               </div>
             )}
-            {/* </div> */}
           </div>
         </div>
       )}
